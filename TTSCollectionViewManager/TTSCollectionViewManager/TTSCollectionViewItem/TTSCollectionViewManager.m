@@ -269,8 +269,13 @@
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.section >= self.mutableSections.count) {
+        return;
+    }
     TTSCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
+    if (indexPath.row >= section.items.count) {
+        return;
+    }
     id item = [section.items objectAtIndex:indexPath.row];
     if ([item respondsToSelector:@selector(setSelectionHandler:)]) {
         TTSCollectionViewItem *actionItem = (TTSCollectionViewItem*)item;

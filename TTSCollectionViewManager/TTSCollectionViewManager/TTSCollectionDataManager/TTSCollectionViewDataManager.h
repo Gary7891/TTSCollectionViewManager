@@ -24,6 +24,11 @@
 
 @property (nonatomic, strong) SupplementaryViewClickHandler supplementaryViewClickHandler;
 
+/**
+ 串行队列
+ */
+@property (nonatomic, strong) dispatch_queue_t serialQueue;
+
 
 /**
  *  当前

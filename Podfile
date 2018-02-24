@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://git.tticar.com/tticar/TTRepo.git'
-platform :ios, '7.1'
+platform :ios, '8.0'
 inhibit_all_warnings!
 target 'TTSCollectionViewManager' do
     pod 'BBNetwork'   #必须
@@ -11,7 +11,7 @@ target 'TTSCollectionViewManager' do
     pod 'MJRefresh'  #非必须
     pod 'SVProgressHUD' #非必须
     pod 'EGOCache'   #非必须
-    pod 'YYKit'      #非必须
-    pod 'AsyncDisplayKit','2.1'
+#    pod 'YYKit'      #非必须
+    pod 'Texture'
 #    pod 'AsyncDisplayKit', :git => 'https://git.coding.net/Gary100/AsyncDisplayKit.git'
 end

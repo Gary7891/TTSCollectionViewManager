@@ -46,13 +46,13 @@
 //    [self registerSupplementaryView:[DemoHeaderItem class]];
     [self.asCollectionNode registerSupplementaryNodeOfKind:UICollectionElementKindSectionHeader];
     
-    _fpsLabel = [YYFPSLabel new];
-    [_fpsLabel sizeToFit];
-    CGRect frmae = _fpsLabel.frame;
-    frmae.origin.x = 12;
-    frmae.origin.y = 12 + 64;
-    _fpsLabel.frame = frmae;
-    [self.view addSubview:_fpsLabel];
+//    _fpsLabel = [YYFPSLabel new];
+//    [_fpsLabel sizeToFit];
+//    CGRect frmae = _fpsLabel.frame;
+//    frmae.origin.x = 12;
+//    frmae.origin.y = 12 + 64;
+//    _fpsLabel.frame = frmae;
+//    [self.view addSubview:_fpsLabel];
 }
 
 - (void)actionOnView:(id)item actionType:(NSInteger)actionType {

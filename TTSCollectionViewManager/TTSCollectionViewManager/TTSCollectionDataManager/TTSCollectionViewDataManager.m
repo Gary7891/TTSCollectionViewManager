@@ -63,7 +63,7 @@
         }
     };
 
-    
+    self.serialQueue = dispatch_queue_create("com.tticar.www", DISPATCH_QUEUE_SERIAL);
     return self;
     
 }

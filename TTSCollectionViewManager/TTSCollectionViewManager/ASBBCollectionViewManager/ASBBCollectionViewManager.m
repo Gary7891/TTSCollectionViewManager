@@ -346,7 +346,13 @@
 }
 
 - (void)collectionNode:(ASCollectionNode *)collectionNode didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section >= self.mutableSections.count) {
+        return;
+    }
     ASBBCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
+    if (indexPath.row >= section.items.count) {
+        return;
+    }
     id item = [section.items objectAtIndex:indexPath.row];
     if ([item respondsToSelector:@selector(setSelectionHandler:)]) {
         ASBBCollectionViewItem *actionItem = (ASBBCollectionViewItem*)item;
