@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://git.tticar.com/tticar/TTRepo.git'
+source 'https://git.tticar.com/pods/Specs.git'
 platform :ios, '8.0'
 inhibit_all_warnings!
 target 'TTSCollectionViewManager' do
