@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit','CoreGraphics'
   s.requires_arc = true
   s.dependency 'BBNetwork'
-  s.dependency 'Texture'
+  s.dependency 'Texture', '2.5.1'
   s.dependency 'pop'
 end
