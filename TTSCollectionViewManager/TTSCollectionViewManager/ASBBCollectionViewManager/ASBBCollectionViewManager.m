@@ -146,6 +146,9 @@
 
 - (ASCellNodeBlock)collectionNode:(ASCollectionNode *)collectionNode nodeBlockForItemAtIndexPath:(NSIndexPath *)indexPath {
     ASBBCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
+    if (indexPath.row >= section.items.count) {
+        return nil;
+    }
     ASBBCollectionViewItem *item = [section.items objectAtIndex:indexPath.row];
     
     Class cellClass = [self classForCellAtIndexPath:indexPath];
@@ -264,6 +267,9 @@
         return [self.delegate collectionNode:collectionNode constrainedSizeForItemAtIndexPath:indexPath];
     }
     ASBBCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
+    if (indexPath.row >= section.items.count) {
+        return ASSizeRangeUnconstrained;
+    }
     ASBBCollectionViewItem *item = [section.items objectAtIndex:indexPath.row];
     CGSize size = item.preferredSize;
     if (!CGSizeEqualToSize(size, CGSizeZero)) {
