@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TTSCollectionViewManager"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "iOS中CollectionView框架"
   s.homepage     = "https://git.tticar.com/pods/TTSCollectionViewManager"
   s.license      = "Copyright (C) 2017 Gary, Inc.  All rights reserved."
