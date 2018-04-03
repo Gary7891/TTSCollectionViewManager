@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author             = { "Gary" => "zguanyu@163.com" }
   s.social_media_url   = "http://www.cupinn.com"
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => "https://git.coding.net/Gary100/TTSCollectionViewManager.git", :tag => '0.2.3' }
+  s.source       = { :git => "https://git.coding.net/Gary100/TTSCollectionViewManager.git", :tag => '0.2.4' }
   s.source_files  = "TTSCollectionViewManager/TTSCollectionViewManager/**/*.{h,m,c}"
   s.frameworks = 'UIKit','CoreGraphics'
   s.requires_arc = true
