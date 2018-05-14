@@ -182,9 +182,7 @@
 //    
 //}
 
-
-- (ASCellNode*)collectionNode:(ASCollectionNode *)collectionNode nodeForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    
+- (ASCellNodeBlock)collectionNode:(ASCollectionNode *)collectionNode nodeBlockForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ASBBCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
     ASBBCollectionReusableViewItem *item = nil;
     
@@ -202,15 +200,46 @@
     }else {
         viewClass = [self classForSupplementaryFooterAtSection:indexPath.section];
     }
+    ASBBCollectionReusableViewItemView* (^viewblock)() = ^ASBBCollectionReusableViewItemView*(){
+        ASBBCollectionReusableViewItemView *view = [[viewClass alloc]initWithCollectionViewItem:item];
+        
+        view.sectionIndex = indexPath.section;
+        view.item = item;
+        return view;
+    };
+    return viewblock;
     
-    ASBBCollectionReusableViewItemView *view = [[viewClass alloc] initWithCollectionViewItem:item];
-    
-    view.sectionIndex = indexPath.section;
-    view.item = item;
-    
-    
-    return view;
 }
+
+
+//- (ASCellNode*)collectionNode:(ASCollectionNode *)collectionNode nodeForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//
+//    ASBBCollectionViewSection *section = [self.mutableSections objectAtIndex:indexPath.section];
+//    ASBBCollectionReusableViewItem *item = nil;
+//
+//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        item = section.headerItem;
+//    }else {
+//        item = section.footerItem;
+//    }
+//    if (!item) {
+//        return nil;
+//    }
+//    Class viewClass = nil;
+//    if([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        viewClass =  [self classForSupplementaryHeaderAtSection:indexPath.section];
+//    }else {
+//        viewClass = [self classForSupplementaryFooterAtSection:indexPath.section];
+//    }
+//
+//    ASBBCollectionReusableViewItemView *view = [[viewClass alloc] initWithCollectionViewItem:item];
+//
+//    view.sectionIndex = indexPath.section;
+//    view.item = item;
+//
+//
+//    return view;
+//}
 
 //- (ASBBCollectionReusableViewItemView *)collectionView:(ASCollectionNode *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
 //    
