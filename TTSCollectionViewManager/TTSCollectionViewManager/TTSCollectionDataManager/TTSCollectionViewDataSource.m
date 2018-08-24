@@ -186,6 +186,7 @@
 - (void)reloadCollectionViewData:(BOOL)pullToRefresh {
     if (pullToRefresh) {
         pullToRefresh = [self.delegate showPullRefresh];
+	_itemCount = 0;
     }
     if (pullToRefresh) {
         [self startPullRefresh];
