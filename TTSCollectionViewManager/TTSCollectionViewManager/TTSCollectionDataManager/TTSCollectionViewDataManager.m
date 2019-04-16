@@ -109,7 +109,9 @@
             
             if (sectionCount > 0) {
                 if (self.collectionViewDataSource.collectionView) {
-                    [self.collectionViewDataSource.collectionView insertSections:[NSIndexSet indexSetWithIndex:sectionCount]];
+                    if ([self.collectionViewDataSource.collectionView numberOfSections] == sectionCount) {
+                        [self.collectionViewDataSource.collectionView insertSections:[NSIndexSet indexSetWithIndex:sectionCount]];
+                    }
                 }else {
                     [self.collectionViewDataSource.asCollectionView performBatchAnimated:YES updates:^{
                         [self.collectionViewDataSource.asCollectionView insertSections:[NSIndexSet indexSetWithIndex:sectionCount]];
